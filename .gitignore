@@ -1,0 +1,27 @@
+# Scratch output of a release run, wiped at the start of the next one. Nothing
+# here is worth keeping — though note "rebuildable" only goes so far: a rebuild
+# produces a *different* binary, with a new signature timestamp, cdhash and
+# notarization ticket. It can't reproduce a DMG that has already shipped.
+build/
+
+# Shipped builds, kept precisely because they can't be reproduced. Deliberately
+# not in git: a DMG is already compressed, so git can't delta it and would store
+# every release at full size forever. The binaries live here and on the release
+# page; RELEASES.md carries the hashes that identify them.
+dist/
+
+# Signing configuration, kept out of the repo so it carries no account details.
+# Both have a tracked .example alongside them; copy each and fill in your team
+# ID. Neither is needed to build unsigned — only to sign or release.
+#
+# Note Signing.xcconfig itself IS tracked and sets nothing: it optionally
+# includes the file below, so a fresh clone builds with no setup. A missing base
+# configuration reference is a hard build error, not a warning.
+Signing.local.xcconfig
+scripts/ExportOptions.plist
+
+# Xcode
+DerivedData/
+*.xcuserstate
+xcuserdata/
+.DS_Store

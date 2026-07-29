@@ -1,0 +1,10 @@
+// Copy this file to Signing.local.xcconfig and put your Apple Developer Program
+// team ID in it. It's untracked, so your account details stay out of the repo.
+//
+// Your team ID is the 10-character string in Xcode ▸ Settings ▸ Accounts, or at
+// developer.apple.com ▸ Membership. scripts/ExportOptions.plist needs the same
+// value, and release.sh cross-checks the two against your certificate.
+//
+// Not needed to build unsigned — only to sign or release.
+
+DEVELOPMENT_TEAM = YOUR_TEAM_ID

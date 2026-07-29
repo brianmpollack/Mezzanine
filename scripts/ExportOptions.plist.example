@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Copy this file to ExportOptions.plist and put your Apple Developer
+	     Program team ID in it. The real file is untracked, so the repo carries
+	     no account details; release.sh reads the team from it and cross-checks
+	     it against your Developer ID certificate.
+
+	     Your team ID is the 10-character string in Xcode ▸ Settings ▸ Accounts,
+	     or at developer.apple.com ▸ Membership. Signing.xcconfig needs the same
+	     value for Xcode's own builds. -->
+
+	<!-- Signed for distribution outside the App Store. The Mac App Store isn't
+	     an option: it requires the sandbox, and the sandbox blocks reading other
+	     apps' accessibility trees, which is what this app is built on. -->
+	<key>method</key>
+	<string>developer-id</string>
+
+	<key>teamID</key>
+	<string>YOUR_TEAM_ID</string>
+
+	<key>signingStyle</key>
+	<string>automatic</string>
+
+	<!-- Notarization is a separate step in release.sh so failures are legible. -->
+	<key>destination</key>
+	<string>export</string>
+</dict>
+</plist>

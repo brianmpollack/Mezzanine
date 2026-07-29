@@ -1,0 +1,15 @@
+// Signing configuration.
+//
+// This file is tracked and intentionally sets nothing. The real team ID lives in
+// Signing.local.xcconfig, which is untracked so the repo carries no account
+// details — see Signing.local.xcconfig.example.
+//
+// The include below is optional (note the "?"), so a fresh clone builds with no
+// setup at all. Without a team you can still build and run:
+//
+//     xcodebuild -scheme Mezzanine -configuration Release build \
+//         CODE_SIGNING_ALLOWED=NO
+//
+// A team is only needed to produce a signed or distributable build.
+
+#include? "Signing.local.xcconfig"
